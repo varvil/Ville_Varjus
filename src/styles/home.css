@@ -1,16 +1,22 @@
 .wrapper {
-    background-color: #130f40;
-    background-image: linear-gradient(335deg, #462b1c 0%, #070a1d 55%);
+    background-image: linear-gradient(350deg, #382b24 0%, #06091d 60%);
+    /* background-image: linear-gradient(350deg, #251913 0%, #06091d 80%, 350deg, #251913 0%);  MAYBE*/
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 5rem;
   }
 
   .about-me {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transition: filter 2s ease-out; /* Smooth transition for the blur */
+  }
+
+  .about-me.blur {
+    filter: blur(5px); /* Adjust the blur amount as needed */
   }
 
   .title {
@@ -49,7 +55,7 @@
   .socials svg {
     height: 30px;
     color: #d6d6d6;
-    transition: height 0.5s ease-out, color 0.5s ease-out;
+    transition: color 0.5s ease-out;
     cursor: none;
   }
 
@@ -66,16 +72,23 @@
     cursor: none;
   }
 
-  .coming {
-    font-size: 70px;
+  .particle-menu {
+    position: relative;
+    font-size: 20px;
     font-family: "Montserrat", sans-serif;
-    font-weight: 100;
+    font-weight: 400;
     color: rgb(224, 224, 224);
+    margin-bottom: 7rem;
+    transition: filter 2s ease-out, color 1.5s ease-out; /* Smooth transition for the blur */
   }
 
-.landing-wrapper {
-    transition: opacity 1s ease-out;
-}
+  .particle-menu:hover {
+    color: rgb(255, 157, 45);
+  }
+
+  .particle-menu.blur {
+    filter: blur(5px);
+  }
 
 .landing-wrapper.fade-out {
     opacity: 0;

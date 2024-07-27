@@ -1,9 +1,24 @@
+import { useEffect, useState } from 'react';
 import '../styles/home.css'
 
 export const Home = () => {
+
+    const [isBlurred, setIsBlurred] = useState(true);
+
+    useEffect(() => {
+        // Set a timeout to remove the blur after a short delay
+        const timer = setTimeout(() => {
+            setIsBlurred(false);
+        }); // Adjust the duration as needed
+
+        return () => clearTimeout(timer);
+    }, []);
+
+
     return (
+    <>
         <div className="wrapper">
-            <div className="about-me">
+            <div className={`about-me ${isBlurred ? 'blur' : ''}`}>
                 <h1 className='title'>
                     Ville Varjus
                 </h1>
@@ -22,9 +37,10 @@ export const Home = () => {
                     </a>
                 </div>
             </div>
-            <div className="coming">
-                <p> | Placeholder</p>
+            <div className={`particle-menu ${isBlurred ? 'blur' : ''}`}>
+                <a className='menu-title'>Placeholder</a>
             </div>
         </div>
+    </>
     )
 }

@@ -7,8 +7,8 @@ import {
   OutMode,
 } from "@tsparticles/engine";
 // import { loadAll } from "@tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
-// import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
-import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
+import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
+// if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 // import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
 
 export const ParticlesSetup = () => {
@@ -21,8 +21,8 @@ export const ParticlesSetup = () => {
       // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
       // starting from v2 you can add only the features you need reducing the bundle size
       //await loadAll(engine);
-      //await loadFull(engine);
-      await loadSlim(engine);
+      await loadFull(engine);
+      //await loadSlim(engine);
       //await loadBasic(engine);
     }).then(() => {
       setInit(true);
@@ -56,8 +56,8 @@ export const ParticlesSetup = () => {
             quantity: 0,
           },
           repulse: {
-            distance: 90,
-            duration: 0.5,
+            distance: 100,
+            duration: 0.4,
           },
         },
       },
@@ -75,15 +75,14 @@ export const ParticlesSetup = () => {
           }
         },
         move: {
-          direction: MoveDirection.none,
           enable: true,
-          outModes: {
-            default: OutMode.out,
-          },
-          random: false,
-          speed: 0.2,
+          speed: 0.25,
+          direction: 'none',
+          random: true,
           straight: false,
-        },
+          out_mode: 'out',
+          bounce: false,
+      },
         number: {
           density: {
             enable: true,
@@ -92,6 +91,8 @@ export const ParticlesSetup = () => {
         },
         opacity: {
           value: 1,
+          random: true,
+          anim: { enable: true, speed: 1, opacity_min: 0.1, sync: true },
         },
         shape: {
           type: "circle",
