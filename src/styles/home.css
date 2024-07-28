@@ -131,6 +131,7 @@ margin-top: 10px; /* Add margin between buttons if necessary */
 }
 
 button {
+  font-family: "Montserrat", sans-serif;
   cursor: none;
 }
 
