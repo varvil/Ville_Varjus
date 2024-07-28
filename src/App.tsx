@@ -1,4 +1,3 @@
-import { ParticlesSetup } from './lib/ParticlesSetup';
 import { Home } from './components/Home';
 import DotRing from './components/Mouse';
 import {Footer} from './components/Footer';
