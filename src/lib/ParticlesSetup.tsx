@@ -34,7 +34,7 @@ const ParticlesSetupComponent = ({ particleCount, velocityCount, colorPicker}: P
   }, []);
 
   const particlesLoaded = async (container?: Container): Promise<void> => {
-    
+    console.log("hello")
   };
 
 
