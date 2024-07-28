@@ -4,7 +4,7 @@ import "../styles/Slider.css"
 
 export const ParticleSlider = ({ initialCount, onChange }: { initialCount: number; onChange: (count: number) => void }) => {
     const { particleCount, handleParticleCountChange } = useParticleCount(initialCount);
-    const [isVisible, setIsVisible] = useState(true);
+    const [isVisible] = useState(true);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       handleParticleCountChange(event);
@@ -28,7 +28,7 @@ export const ParticleSlider = ({ initialCount, onChange }: { initialCount: numbe
 
   export const VelocitySlider = ({ initialValue, onChange }: { initialValue: number; onChange: (count: number) => void }) => {
     const { velocityCount, handleVelocityCountChange } = useVelocityCount(initialValue);
-    const [isVisible, setIsVisible] = useState(true);
+    const [isVisible] = useState(true);
   
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       handleVelocityCountChange(event);
@@ -54,7 +54,7 @@ export const ParticleSlider = ({ initialCount, onChange }: { initialCount: numbe
 
   export const ColorPickerr = ({ initialValue, onChange }: { initialValue: string; onChange: (count: string) => void }) => {
     const { colorPicker, handleColorPickerChange } = useColorPicker(initialValue);
-    const [isVisible, setIsVisible] = useState(true);
+    const [isVisible] = useState(true);
   
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       handleColorPickerChange(event);
