@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useColorPicker, useParticleCount, useVelocityCount } from '../hooks/useParticleCount';
 import "../styles/Slider.css"
 
 export const ParticleSlider = ({ initialCount, onChange }: { initialCount: number; onChange: (count: number) => void }) => {
     const { particleCount, handleParticleCountChange } = useParticleCount(initialCount);
-  
+    const [isVisible, setIsVisible] = useState(true);
+
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       handleParticleCountChange(event);
       onChange(Number(event.target.value));
     };
 
     return (
-      <div className="slider-container" style={{ animationDelay: '0.2s' }}>
+      <div className={`slider-container ${isVisible ? 'fade-in' : 'fade-out'}`} style={{ animationDelay: '0.2s' }}>
         <input
           type="range"
           min="1"
@@ -27,6 +28,7 @@ export const ParticleSlider = ({ initialCount, onChange }: { initialCount: numbe
 
   export const VelocitySlider = ({ initialValue, onChange }: { initialValue: number; onChange: (count: number) => void }) => {
     const { velocityCount, handleVelocityCountChange } = useVelocityCount(initialValue);
+    const [isVisible, setIsVisible] = useState(true);
   
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       handleVelocityCountChange(event);
@@ -35,7 +37,7 @@ export const ParticleSlider = ({ initialCount, onChange }: { initialCount: numbe
 
   
     return (
-      <div className="slider-container" style={{ animationDelay: '0.4s' }}>
+      <div className={`slider-container ${isVisible ? 'fade-in' : 'fade-out'}`} style={{ animationDelay: '0.4s' }}>
         <input
           type="range"
           min="0.25"
@@ -52,6 +54,7 @@ export const ParticleSlider = ({ initialCount, onChange }: { initialCount: numbe
 
   export const ColorPickerr = ({ initialValue, onChange }: { initialValue: string; onChange: (count: string) => void }) => {
     const { colorPicker, handleColorPickerChange } = useColorPicker(initialValue);
+    const [isVisible, setIsVisible] = useState(true);
   
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       handleColorPickerChange(event);
@@ -60,7 +63,7 @@ export const ParticleSlider = ({ initialCount, onChange }: { initialCount: numbe
 
   
     return (
-      <div className="slider-container" style={{ animationDelay: '0.6s' }}>
+      <div className={`slider-container ${isVisible ? 'fade-in' : 'fade-out'}`} style={{ animationDelay: '0.6s' }}>
         <input type="text"
         value={colorPicker} 
         onChange={handleChange}
