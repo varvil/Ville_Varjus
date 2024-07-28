@@ -1,130 +1,130 @@
 .wrapper {
-    background-image: linear-gradient(350deg, #382b24 0%, #06091d 60%);
-    /* background-image: linear-gradient(350deg, #251913 0%, #06091d 80%, 350deg, #251913 0%);  MAYBE*/
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  background-image: linear-gradient(350deg, #382b24 0%, #06091d 60%);
+  /* background-image: linear-gradient(350deg, #251913 0%, #06091d 80%, 350deg, #251913 0%);  MAYBE*/
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .about-me {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: filter 2s ease-out; /* Smooth transition for the blur */
-  }
+.about-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: filter 2s ease-out; /* Smooth transition for the blur */
+}
 
-  .about-me.blur {
-    filter: blur(5px); /* Adjust the blur amount as needed */
-  }
+.about-me.blur {
+  filter: blur(5px); /* Adjust the blur amount as needed */
+}
 
-  .title {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-    font-size: 4rem;
-    color: rgb(224, 224, 224);
-  }
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 4rem;
+  color: rgb(224, 224, 224);
+}
 
-  .description {
-    font-family: "Montserrat", sans-serif;
-    margin-top: 5px;
-    color: rgb(224, 224, 224);
-    font-size: 1.3rem;
-    max-width: 600px;
-    font-weight: 150;
-  }
+.description {
+  font-family: "Montserrat", sans-serif;
+  margin-top: 5px;
+  color: rgb(224, 224, 224);
+  font-size: 1.3rem;
+  max-width: 600px;
+  font-weight: 150;
+}
 
-  h1 {
-    padding: 0;
-    margin: 0;
-  }
+h1 {
+  padding: 0;
+  margin: 0;
+}
 
-  p {
-    padding: 0;
-    margin: 0;
-  }
+p {
+  padding: 0;
+  margin: 0;
+}
 
-  .socials {
-    display: flex;
-    margin-top: 7px;
-    height: 50px;
-    align-items: center;
-    gap: 25px;
-  }
+.socials {
+  display: flex;
+  margin-top: 7px;
+  height: 50px;
+  align-items: center;
+  gap: 25px;
+}
 
-  .socials svg {
-    height: 30px;
-    color: #d6d6d6;
-    transition: color 0.5s ease-out;
-    cursor: none;
-  }
+.socials svg {
+  height: 30px;
+  color: #d6d6d6;
+  transition: color 0.5s ease-out;
+  cursor: none;
+}
 
-  .socials svg:hover {
-    color: rgb(255, 157, 45);
-    cursor: none;
-  }
+.socials svg:hover {
+  color: rgb(255, 157, 45);
+  cursor: none;
+}
 
-  .socials a {
-    cursor: none;
-  }
+.socials a {
+  cursor: none;
+}
 
-  .socials a:hover {
-    cursor: none;
-  }
+.socials a:hover {
+  cursor: none;
+}
 
-  .particle-menu {
-    position: relative;
-    font-size: 20px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    color: rgb(201, 201, 201);
-    margin-bottom: 7rem;
-    width: 200px;
-    margin-left: 50px;
-    transition: filter 2s ease-out, color 1s ease-out; /* Smooth transition for the blur */
-  }
+.particle-menu {
+  position: relative;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: rgb(201, 201, 201);
+  margin-bottom: 7rem;
+  width: 200px;
+  margin-left: 50px;
+  transition: filter 2s ease-out, color 1s ease-out; /* Smooth transition for the blur */
+}
 
-  .menu-title {
-    transition: filter 2s ease-out, color 1s ease-out; /* Smooth transition for the blur */
-  }
+.menu-title {
+  transition: filter 2s ease-out, color 1s ease-out; /* Smooth transition for the blur */
+}
 
-  .menu-title:hover {
-    color: rgb(255, 157, 45);
-  }
+.menu-title:hover {
+  color: rgb(255, 157, 45);
+}
 
-  .particle-menu.blur {
-    filter: blur(10px);
-  }
+.particle-menu.blur {
+  filter: blur(10px);
+}
 
 .blur {
-  filter: blur(5px);
-  transition: filter 0.5s;
+filter: blur(5px);
+transition: filter 0.5s;
 }
 
 .buttons-container {
-  display: flex;
-  flex-direction: column;
-  position: absolute; /* Position the buttons absolutely */
-  top: 100%; /* Place the buttons directly below the menu-title */
-  left: 0;
+display: flex;
+flex-direction: column;
+position: absolute; /* Position the buttons absolutely */
+top: 100%; /* Place the buttons directly below the menu-title */
+left: 0;
 }
 
 .menu-button {
-  font-size: 14px;
-  font-weight: 400;
-  opacity: 0;
-  filter: blur(5px);
-  animation: fadeInBlur 1s forwards;
-  margin-top: 15px; /* Add margin between buttons if necessary */
+font-size: 14px;
+font-weight: 400;
+opacity: 0;
+filter: blur(5px);
+animation: fadeInBlur 1s forwards;
+margin-top: 10px; /* Add margin between buttons if necessary */
 }
 
 @keyframes fadeInBlur {
-  from {
-      opacity: 0;
-      filter: blur(5px);
-  }
-  to {
-      opacity: 1;
-      filter: blur(0);
-  }
+from {
+    opacity: 0;
+    filter: blur(5px);
+}
+to {
+    opacity: 1;
+    filter: blur(0);
+}
 }

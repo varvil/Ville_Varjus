@@ -20,3 +20,13 @@ export const useVelocityCount = (initialValue: number) => {
 
   return {velocityCount, handleVelocityCountChange};
 }
+
+export const useColorPicker = (initialValue: string) => {
+  const [colorPicker, setColorPicker] = useState(initialValue)
+
+  const handleColorPickerChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setColorPicker(String(event.target.value))
+  }
+
+  return {colorPicker, handleColorPickerChange};
+}

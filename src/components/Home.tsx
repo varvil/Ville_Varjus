@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import '../styles/home.css'
 import { ParticlesSetup } from '../lib/ParticlesSetup';
-import { ParticleSlider } from './ParticleSlider'; // Adjust the import path as necessary
+import { ColorPickerr, ParticleSlider } from './ParticleSlider'; // Adjust the import path as necessary
 import { VelocitySlider } from './ParticleSlider';
 
 
@@ -11,6 +11,7 @@ export const Home = () => {
     const [showButtons, setShowButtons] = useState(false);
     const [particleCount, setParticleCount] = useState(45); // Default particle count
     const [velocityCount, setVelocityCount] = useState(0.25);
+    const [color, setColor] = useState("#d6d6d6");
 
     useEffect(() => {
         // Set a timeout to remove the blur after a short delay
@@ -28,7 +29,7 @@ export const Home = () => {
     return (
     <>
         <div className="wrapper">
-        <ParticlesSetup particleCount={particleCount} velocityCount={velocityCount} />
+        <ParticlesSetup particleCount={particleCount} velocityCount={velocityCount} colorPicker={color} />
             <div className={`about-me ${isBlurred ? 'blur' : ''}`}>
                 <h1 className='title'>
                     Ville Varjus
@@ -55,6 +56,7 @@ export const Home = () => {
                         <a className='menu-button' style={{ animationDelay: '0.2s' }}>
                             <ParticleSlider initialCount={particleCount} onChange={setParticleCount} />
                             <VelocitySlider initialValue={velocityCount} onChange={setVelocityCount} />
+                            <ColorPickerr initialValue={color} onChange={setColor}/>
                         </a>
                     </div>
                 )}

@@ -13,9 +13,10 @@ import React from "react";
 interface ParticlesSetupProps {
   particleCount: number;
   velocityCount: number;
+  colorPicker: string;
 }
 
-const ParticlesSetupComponent = ({ particleCount, velocityCount}: ParticlesSetupProps) => {
+const ParticlesSetupComponent = ({ particleCount, velocityCount, colorPicker}: ParticlesSetupProps) => {
   const [init, setInit] = useState(false);
   // this should be run only once per application lifetime
   useEffect(() => {
@@ -67,7 +68,7 @@ const ParticlesSetupComponent = ({ particleCount, velocityCount}: ParticlesSetup
       },
       particles: {
         color: {
-          value: "#d6d6d6",
+          value: colorPicker,
         },
         shadow: {
           blur: 8,
@@ -107,7 +108,7 @@ const ParticlesSetupComponent = ({ particleCount, velocityCount}: ParticlesSetup
       },
       detectRetina: true,
     }),
-    [particleCount, velocityCount],
+    [particleCount, velocityCount, colorPicker],
   );
 
   if (init) {

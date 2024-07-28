@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParticleCount, useVelocityCount } from '../hooks/useParticleCount';
+import { useColorPicker, useParticleCount, useVelocityCount } from '../hooks/useParticleCount';
 import "../styles/Slider.css"
 
 export const ParticleSlider = ({ initialCount, onChange }: { initialCount: number; onChange: (count: number) => void }) => {
@@ -15,12 +15,12 @@ export const ParticleSlider = ({ initialCount, onChange }: { initialCount: numbe
         <input
           type="range"
           min="1"
-          max="250"
+          max="200"
           value={particleCount}
           onChange={handleChange}
           className="slider"
         />
-        <label className='count-label'>{particleCount} Particles</label>
+        <label className='count-label'>Particles : {particleCount}</label>
       </div>
     );
   }
@@ -45,7 +45,28 @@ export const ParticleSlider = ({ initialCount, onChange }: { initialCount: numbe
           onChange={handleChange}
           className="slider"
         />
-        <label className='count-label'>{velocityCount} Velocity</label>
+        <label className='count-label'>Velocity : {velocityCount}</label>
+      </div>
+    );
+  }
+
+  export const ColorPickerr = ({ initialValue, onChange }: { initialValue: string; onChange: (count: string) => void }) => {
+    const { colorPicker, handleColorPickerChange } = useColorPicker(initialValue);
+  
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      handleColorPickerChange(event);
+      onChange(String(event.target.value));
+    };
+
+  
+    return (
+      <div className="slider-container">
+        <input type="text"
+        value={colorPicker} 
+        onChange={handleChange}
+        className='color-input'
+        />
+        <label className='count-label'>Particle color : {colorPicker} </label>
       </div>
     );
   }
