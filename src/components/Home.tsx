@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import '../styles/home.css'
 import { ParticlesSetup } from '../lib/ParticlesSetup';
-import { ParticleSlider } from '../hooks/ParticleSlider'; // Adjust the import path as necessary
-import { VelocitySlider } from '../hooks/ParticleSlider';
+import { ParticleSlider } from './ParticleSlider'; // Adjust the import path as necessary
+import { VelocitySlider } from './ParticleSlider';
 
 
 export const Home = () => {
