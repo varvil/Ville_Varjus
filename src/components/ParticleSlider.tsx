@@ -11,7 +11,7 @@ export const ParticleSlider = ({ initialCount, onChange }: { initialCount: numbe
     };
 
     return (
-      <div className="slider-container">
+      <div className="slider-container" style={{ animationDelay: '0.2s' }}>
         <input
           type="range"
           min="1"
@@ -35,7 +35,7 @@ export const ParticleSlider = ({ initialCount, onChange }: { initialCount: numbe
 
   
     return (
-      <div className="slider-container">
+      <div className="slider-container" style={{ animationDelay: '0.4s' }}>
         <input
           type="range"
           min="0.25"
@@ -60,7 +60,7 @@ export const ParticleSlider = ({ initialCount, onChange }: { initialCount: numbe
 
   
     return (
-      <div className="slider-container">
+      <div className="slider-container" style={{ animationDelay: '0.6s' }}>
         <input type="text"
         value={colorPicker} 
         onChange={handleChange}

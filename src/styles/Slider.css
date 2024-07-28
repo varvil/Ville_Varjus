@@ -1,6 +1,6 @@
 .slider {
   width: 200px;
-  height: 7px;
+  height: 5px;
   -webkit-appearance: none;
   background: #b9b9b9;
   outline: none;
@@ -12,18 +12,21 @@
 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 9px;
-  height: 10px;
+  width: 8px;
+  height: 9px;
   border-radius: 50%;
   background: #d4d4d4;
   border: 1px solid rgb(145, 145, 145);
-  box-shadow: -407px 0 0 400px rgb(255, 178, 91);
+  box-shadow: -407px 0 0 400px rgb(255, 170, 72);
   cursor: none;
 }
 
 .slider-container {
   margin-bottom: 3px;
   padding: 0;
+  opacity: 0;
+  filter: blur(2px);
+  animation: fadeInBlur 1s forwards;
 }
 
 .color-input {
@@ -33,15 +36,29 @@
   border: none;
   border-bottom: 1px solid rgb(182, 182, 182);
   margin-left: 3px;
-  margin-top: 10px;
+  margin-top: 8px;
   margin-bottom: 5px;
+  cursor: none;
 }
 
-.color-input:active {
-  border: none;
+.color-input:focus {
+  outline: none;
+  cursor: none;
 }
 
 label {
   cursor: none;
   margin-left: 3px;
+}
+
+
+@keyframes fadeInBlur {
+from {
+    opacity: 0;
+    filter: blur(2px);
+}
+to {
+    opacity: 1;
+    filter: blur(0);
+}
 }

@@ -53,8 +53,8 @@ export const Home = () => {
                 <a className='menu-title' onClick={handleMenuTitleClick}>Particle Menu</a>
                 {showButtons && (
                     <div className="buttons-container">
-                        <a className='menu-button' style={{ animationDelay: '0.2s' }}>
-                            <ParticleSlider initialCount={particleCount} onChange={setParticleCount} />
+                        <a className='menu-button'>
+                            <ParticleSlider initialCount={particleCount} onChange={setParticleCount}/>
                             <VelocitySlider initialValue={velocityCount} onChange={setVelocityCount} />
                             <ColorPickerr initialValue={color} onChange={setColor}/>
                         </a>

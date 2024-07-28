@@ -128,3 +128,42 @@ to {
     filter: blur(0);
 }
 }
+
+@media only screen and (max-width: 970px) {
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 50px;
+  }
+
+  .about-me {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .about-me .description {
+    width: 400px;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  .particle-menu {
+    margin: 0;
+    text-align: center;
+  }
+
+  .buttons-container {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-height: 668px) {
+
+  .wrapper {
+    gap: 20px;
+  }
+}
