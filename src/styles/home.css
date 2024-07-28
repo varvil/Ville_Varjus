@@ -5,7 +5,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
   }
 
   .about-me {
@@ -28,8 +27,9 @@
 
   .description {
     font-family: "Montserrat", sans-serif;
+    margin-top: 5px;
     color: rgb(224, 224, 224);
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     max-width: 600px;
     font-weight: 150;
   }
@@ -46,7 +46,7 @@
 
   .socials {
     display: flex;
-    margin-top: 10px;
+    margin-top: 7px;
     height: 50px;
     align-items: center;
     gap: 25px;
@@ -77,19 +77,54 @@
     font-size: 20px;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    color: rgb(224, 224, 224);
+    color: rgb(201, 201, 201);
     margin-bottom: 7rem;
-    transition: filter 2s ease-out, color 1.5s ease-out; /* Smooth transition for the blur */
+    width: 200px;
+    margin-left: 50px;
+    transition: filter 2s ease-out, color 1s ease-out; /* Smooth transition for the blur */
   }
 
-  .particle-menu:hover {
+  .menu-title {
+    transition: filter 2s ease-out, color 1s ease-out; /* Smooth transition for the blur */
+  }
+
+  .menu-title:hover {
     color: rgb(255, 157, 45);
   }
 
   .particle-menu.blur {
-    filter: blur(5px);
+    filter: blur(10px);
   }
 
-.landing-wrapper.fade-out {
-    opacity: 0;
+.blur {
+  filter: blur(5px);
+  transition: filter 0.5s;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute; /* Position the buttons absolutely */
+  top: 100%; /* Place the buttons directly below the menu-title */
+  left: 0;
+}
+
+.menu-button {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0;
+  filter: blur(5px);
+  animation: fadeInBlur 1s forwards;
+  margin-top: 15px; /* Add margin between buttons if necessary */
+}
+
+@keyframes fadeInBlur {
+  from {
+      opacity: 0;
+      filter: blur(5px);
+  }
+  to {
+      opacity: 1;
+      filter: blur(0);
+  }
 }

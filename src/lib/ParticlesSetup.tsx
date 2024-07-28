@@ -3,17 +3,20 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import {
   type Container,
   type ISourceOptions,
-  MoveDirection,
-  OutMode,
 } from "@tsparticles/engine";
 // import { loadAll } from "@tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
 import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
+import React from "react";
 // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 // import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
 
-export const ParticlesSetup = () => {
-  const [init, setInit] = useState(false);
+interface ParticlesSetupProps {
+  particleCount: number;
+  velocityCount: number;
+}
 
+const ParticlesSetupComponent = ({ particleCount, velocityCount}: ParticlesSetupProps) => {
+  const [init, setInit] = useState(false);
   // this should be run only once per application lifetime
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -30,8 +33,9 @@ export const ParticlesSetup = () => {
   }, []);
 
   const particlesLoaded = async (container?: Container): Promise<void> => {
-    console.log(container);
+    console.log(container)
   };
+
 
   const options: ISourceOptions = useMemo(
     () => ({
@@ -47,7 +51,7 @@ export const ParticlesSetup = () => {
             mode: "push",
           },
           onHover: {
-            enable: true,
+            enable: false,
             mode: "repulse",
           },
         },
@@ -56,7 +60,7 @@ export const ParticlesSetup = () => {
             quantity: 0,
           },
           repulse: {
-            distance: 100,
+            distance: 200,
             duration: 0.4,
           },
         },
@@ -76,7 +80,7 @@ export const ParticlesSetup = () => {
         },
         move: {
           enable: true,
-          speed: 0.25,
+          speed: velocityCount,
           direction: 'none',
           random: true,
           straight: false,
@@ -87,7 +91,7 @@ export const ParticlesSetup = () => {
           density: {
             enable: true,
           },
-          value: 45,
+          value: particleCount,
         },
         opacity: {
           value: 1,
@@ -103,7 +107,7 @@ export const ParticlesSetup = () => {
       },
       detectRetina: true,
     }),
-    [],
+    [particleCount, velocityCount],
   );
 
   if (init) {
@@ -118,3 +122,5 @@ export const ParticlesSetup = () => {
 
   return <></>;
 };
+
+export const ParticlesSetup = React.memo(ParticlesSetupComponent);

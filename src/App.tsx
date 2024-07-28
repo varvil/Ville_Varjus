@@ -9,9 +9,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <DotRing/>
-        <div className="particles-container">
-        <ParticlesSetup/>
-        </div>
         <div className="content">
         <Home/>
         </div>

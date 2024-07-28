@@ -1,29 +1,40 @@
 import { useEffect, useState } from 'react';
 import '../styles/home.css'
+import { ParticlesSetup } from '../lib/ParticlesSetup';
+import { ParticleSlider } from '../hooks/ParticleSlider'; // Adjust the import path as necessary
+import { VelocitySlider } from '../hooks/ParticleSlider';
+
 
 export const Home = () => {
 
     const [isBlurred, setIsBlurred] = useState(true);
+    const [showButtons, setShowButtons] = useState(false);
+    const [particleCount, setParticleCount] = useState(45); // Default particle count
+    const [velocityCount, setVelocityCount] = useState(0.25);
 
     useEffect(() => {
         // Set a timeout to remove the blur after a short delay
         const timer = setTimeout(() => {
             setIsBlurred(false);
-        }); // Adjust the duration as needed
+        }, 100); // Adjust the duration as needed
 
         return () => clearTimeout(timer);
     }, []);
 
+    const handleMenuTitleClick = () => {
+        setShowButtons(!showButtons);
+    };
 
     return (
     <>
         <div className="wrapper">
+        <ParticlesSetup particleCount={particleCount} velocityCount={velocityCount} />
             <div className={`about-me ${isBlurred ? 'blur' : ''}`}>
                 <h1 className='title'>
                     Ville Varjus
                 </h1>
                 <p className="description">
-                    Entrepreneur. Full Stack Software Developer & eSports video producer, B.Sc. in Information Technology
+                    Entrepreneur. Full Stack Software Developer, musician, B.Sc. in Information Technology
                 </p>
                 <div className="socials">
                     <a href="https://github.com/varvil" rel='noreferrer' target='_blank'>
@@ -38,7 +49,15 @@ export const Home = () => {
                 </div>
             </div>
             <div className={`particle-menu ${isBlurred ? 'blur' : ''}`}>
-                <a className='menu-title'>Placeholder</a>
+                <a className='menu-title' onClick={handleMenuTitleClick}>Particle Menu</a>
+                {showButtons && (
+                    <div className="buttons-container">
+                        <a className='menu-button' style={{ animationDelay: '0.2s' }}>
+                            <ParticleSlider initialCount={particleCount} onChange={setParticleCount} />
+                            <VelocitySlider initialValue={velocityCount} onChange={setVelocityCount} />
+                        </a>
+                    </div>
+                )}
             </div>
         </div>
     </>
