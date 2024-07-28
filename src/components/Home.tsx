@@ -50,14 +50,14 @@ export const Home = () => {
                 </div>
             </div>
             <div className={`particle-menu ${isBlurred ? 'blur' : ''}`}>
-                <a className='menu-title' onClick={handleMenuTitleClick}>Particle Menu</a>
+                <button className='menu-title' onClick={handleMenuTitleClick}>Particle Menu</button>
                 {showButtons && (
                     <div className="buttons-container">
-                        <a className='menu-button'>
+                        <button className='menu-button'>
                             <ParticleSlider initialCount={particleCount} onChange={setParticleCount}/>
                             <VelocitySlider initialValue={velocityCount} onChange={setVelocityCount} />
                             <ColorPickerr initialValue={color} onChange={setColor}/>
-                        </a>
+                        </button>
                     </div>
                 )}
             </div>

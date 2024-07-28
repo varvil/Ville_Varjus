@@ -72,6 +72,14 @@ p {
   cursor: none;
 }
 
+.menu-button {
+  background-color: transparent;
+  border: none;
+  color: rgb(187, 187, 187);
+  text-align: left;
+}
+
+
 .particle-menu {
   position: relative;
   font-size: 20px;
@@ -85,6 +93,10 @@ p {
 }
 
 .menu-title {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  color: rgb(201, 201, 201);
   transition: filter 2s ease-out, color 1s ease-out; /* Smooth transition for the blur */
 }
 
@@ -116,6 +128,10 @@ opacity: 0;
 filter: blur(5px);
 animation: fadeInBlur 1s forwards;
 margin-top: 10px; /* Add margin between buttons if necessary */
+}
+
+button {
+  cursor: none;
 }
 
 @keyframes fadeInBlur {
