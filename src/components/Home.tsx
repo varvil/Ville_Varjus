@@ -12,6 +12,7 @@ export const Home = () => {
     const [particleCount, setParticleCount] = useState(45); // Default particle count
     const [velocityCount, setVelocityCount] = useState(0.25);
     const [color, setColor] = useState("#d6d6d6");
+    const [isVisible] = useState(true);
 
     useEffect(() => {
         // Set a timeout to remove the blur after a short delay
@@ -35,7 +36,7 @@ export const Home = () => {
                     Ville Varjus
                 </h1>
                 <p className="description">
-                    Entrepreneur. Full Stack Software Developer, musician, B.Sc. in Information Technology
+                    Entrepreneur. Full Stack Software Developer, B.Sc. in Information Technology
                 </p>
                 <div className="socials">
                     <a href="https://github.com/varvil" rel='noreferrer' target='_blank'>
@@ -53,11 +54,11 @@ export const Home = () => {
                 <button className='menu-title' onClick={handleMenuTitleClick}>Particle Menu</button>
                 {showButtons && (
                     <div className="buttons-container">
-                        <button className='menu-button'>
+                        <div className='menu-button'>
                             <ParticleSlider initialCount={particleCount} onChange={setParticleCount}/>
                             <VelocitySlider initialValue={velocityCount} onChange={setVelocityCount} />
                             <ColorPickerr initialValue={color} onChange={setColor}/>
-                        </button>
+                        </div>
                     </div>
                 )}
             </div>

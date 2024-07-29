@@ -12,10 +12,3 @@
 .footer.blur {
   filter: blur(5px);
 }
-
-@media only screen and (max-height: 668px) {
-
-  .footer {
-    top: 5%;
-  }
-}

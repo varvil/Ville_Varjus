@@ -68,3 +68,19 @@ label {
   0% { opacity: 1; transform: translateY(0); filter: blur(0); }
   100% { opacity: 0; transform: translateY(-20px); filter: blur(2px) }
 }
+
+@media only screen and (max-height: 668px) {
+
+  .slider-container {
+    text-align: center;
+  }
+
+  .slider {
+    width: 155px
+  }
+
+  .color-input {
+    width: 155px;
+  }
+
+}
