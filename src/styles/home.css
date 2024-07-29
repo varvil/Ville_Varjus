@@ -148,20 +148,31 @@ to {
 
 @media only screen and (max-width: 970px) {
 
+  html, body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
   .wrapper {
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
     position: relative;
-    gap: 50px;
+    gap: 40px;
   }
 
   .about-me {
     text-align: center;
-    padding: 10px;
+  }
+
+  .title {
+    font-size: 36px;
   }
 
   .about-me .description {
-    width: 400px;
+    width: 250px;
+    font-size: 15px;
   }
 
   .socials {
@@ -180,6 +191,11 @@ to {
 
 @media only screen and (max-height: 668px) {
 
+  html, body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
   .wrapper {
     display: flex;
     justify-content:flex-start;
@@ -187,14 +203,10 @@ to {
 
   .about-me {
     align-items: center;
-    height: 200px;
-    width: 300px;
-    padding: 0;
-    margin: 0;
   }
 
   .title {
-    font-size: 48px;
+    font-size: 32px;
   }
 
   .description {
