@@ -12,7 +12,6 @@ export const Home = () => {
     const [particleCount, setParticleCount] = useState(45); // Default particle count
     const [velocityCount, setVelocityCount] = useState(0.25);
     const [color, setColor] = useState("#d6d6d6");
-    const [isVisible] = useState(true);
 
     useEffect(() => {
         // Set a timeout to remove the blur after a short delay
